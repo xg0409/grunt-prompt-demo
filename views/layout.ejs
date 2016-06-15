@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+    <script type="text/javascript" src="/javascripts/jquery-2.1.4.js"></script>
+    <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        $(".nav-tabs li").on('click',function(){
+          $(this).siblings().removeClass("active");
+          $(this).addClass("active");
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="nav nav-tabs">
+        <li class="active">
+          <a href="/">首页</a>
+        </li>
+        <li><a href="/login">登陆</a></li>
+        <li><a href="/reg">注册</a></li>
+      </ul>
+      <div class="container-body">
+         <%- body %>
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>
+    {{title}}
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/bootstrap.css' />
+  <script type="text/javascript" src="/javascripts/jquery-2.1.4.js"></script>
+  <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  $(function() {
+    $(".nav-tabs li").on('click', function() {
+      $(this).siblings().removeClass("active");
+      $(this).addClass("active");
+    });
+  });
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <h1>{{title}}</h1>
+  </div>
+</body>
+
+</html>
