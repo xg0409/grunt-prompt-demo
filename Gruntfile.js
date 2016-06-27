@@ -3,44 +3,42 @@ module.exports = function(grunt) {
   var devBuild = {
     options: {
       questions: [{
-        config: 'list_item',
+        config: 'project_item',
         type: 'list',
-        message: 'Bump version from to:',
+        message: 'select all',
         choices: [{
-          value: 'a',
-          name: 'a'
+          value: 'build_all_projects',
+          name: 'build_all_projects'
         }, {
-          value: 'b',
-          name: 'b'
-        }, {
-          value: 'c',
-          name: 'c'
+          value: 'app',
+          name: 'app'
         }]
       }, {
-        config: 'list_item_1',
+        config: 'projects_app_submodule',
         type: 'list',
-        message: 'What specific version would you like',
+        message: 'select app project submodule',
         when: function(answers) {
-          var answer = answers['list_item'];
-          if (answer === "a") {} else {}
-          return true;
+          var answer = answers['project_item'];
+          if (answer === "app") {
+            return true;
+          }
+          return false;
         },
-
-        default: 'a2',
+        // default: 'a2',
         choices: [{
-          value: 'a1',
-          name: 'a1'
+          value: 'ms_pull_new',
+          name: 'ms_pull_new'
         }, {
-          value: 'a2',
-          name: 'a2'
+          value: 'snap_up_center',
+          name: 'snap_up_center'
         }, {
-          value: 'a3',
-          name: 'a3'
+          value: 'get_coupon',
+          name: 'get_coupon'
         }]
       }],
       then: function(results, done) {
-        console.log('prompt then().', results);
-      },
+        console.log('xg:', results);
+      }
     }
   }
 
